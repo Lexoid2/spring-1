@@ -14,7 +14,7 @@ RUN ./mvnw dependency:go-offline
 COPY src ./src
 
 # Build the application
-RUN ./mvnw clean package -DskipTests
+RUN ./mvnw clean package
 
 # Second stage: create the runtime image
 FROM eclipse-temurin:17-jre-alpine
@@ -26,5 +26,5 @@ COPY --from=build /app/target/*-jar-with-dependencies.jar app.jar
 # Expose the application port
 EXPOSE 8080
 
-# Run the application with wait-for-it.sh, extending the timeout
+# Run the application
 CMD ["java", "-jar", "app.jar"]

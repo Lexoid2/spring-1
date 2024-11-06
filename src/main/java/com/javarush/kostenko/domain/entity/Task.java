@@ -14,6 +14,7 @@ import lombok.experimental.FieldDefaults;
 @Table(name = "task")
 @Data
 @NoArgsConstructor
+@RequiredArgsConstructor
 @FieldDefaults(level = AccessLevel.PRIVATE)
 public class Task {
     @Id

@@ -95,7 +95,7 @@ To test and develop locally, ensure Java 17 and Maven are installed, and start t
 1. **Build the Project:**
 
 ```bash
-mvn clean package -DskipTests
+mvn clean package
 ```
 
 2. **Run the Application:**

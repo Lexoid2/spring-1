@@ -72,7 +72,7 @@ public class TaskController {
      */
     @PutMapping(value = "/tasks/edit/{id}", consumes = MediaType.APPLICATION_JSON_VALUE)
     @ResponseBody
-    public ResponseEntity<Void> updateTask(@PathVariable Long id, @RequestBody Task taskUpdate) {
+    public ResponseEntity<Void> updateTask(@PathVariable Integer id, @RequestBody Task taskUpdate) {
         log.info("Updating task with id: {}", id);
         Optional<Task> existingTaskOptional = taskService.findById(id);
 
@@ -98,7 +98,7 @@ public class TaskController {
      */
     @DeleteMapping("/tasks/{id}")
     @ResponseBody
-    public ResponseEntity<Void> deleteTask(@PathVariable Long id) {
+    public ResponseEntity<Void> deleteTask(@PathVariable Integer id) {
         log.info("Deleting task with id: {}", id);
         if (taskService.findById(id).isPresent()) {
             taskService.deleteById(id);

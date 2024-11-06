@@ -39,7 +39,7 @@ public class TaskService {
      * @param id the ID of the task to be found
      * @return an Optional containing the found Task, or an empty Optional if no task is found
      */
-    public Optional<Task> findById(Long id) {
+    public Optional<Task> findById(Integer id) {
         log.info("Looking for task with id: {}", id);
         return taskRepository.findById(id);
     }
@@ -59,7 +59,7 @@ public class TaskService {
      *
      * @param id the ID of the task to be deleted
      */
-    public void deleteById(Long id) {
+    public void deleteById(Integer id) {
         log.info("Deleting task with id: {}", id);
         taskRepository.deleteById(id);
     }

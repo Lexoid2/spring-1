@@ -9,6 +9,6 @@ import org.springframework.stereotype.Repository;
  * Provides standard CRUD operations and pagination support via Spring Data JPA.
  */
 @Repository
-public interface TaskRepository extends JpaRepository<Task, Long> {
+public interface TaskRepository extends JpaRepository<Task, Integer> {
 
 }
